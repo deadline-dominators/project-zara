@@ -1,9 +1,12 @@
 import './App.css';
+import TopHeader from './components/TopHeader/TopHeader.js';
+import NavBar from './components/NavBar/NavBar.js'
 
 function App() {
   return (
 <div>
-  <h1>hello from here</h1>
+  <TopHeader />
+  <NavBar />
 </div>
   )
 }
