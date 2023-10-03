@@ -9,6 +9,7 @@ import Cards from "./components/card/Cards.js";
 import Accounts from "./components/account/Accounts.js";
 import Home from "./components/HomePage/Home";
 import Contact from "./components/HomePage/Contact";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   const handleSignUp = async (obj) => {
@@ -55,6 +56,7 @@ function App() {
         <Route path="/" element={<Home />} />
           <Route path="/contact" element={<Contact />} />
       </Routes>
+      <Footer />
     </div>
   );
 }
