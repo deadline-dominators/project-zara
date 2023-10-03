@@ -11,7 +11,7 @@ const [adress,setAdress]=useState("")
   
 const  updateAccout=()=>{
     if(firstName==="" || lastName==="" || email==="" || currentPassword==="" || newPassword==="" || confirmPassword==="" || confirmPassword==="" || adress===""){
-        alert("please enter your data ")
+        alert("Please enter your data ")
         return 
     } 
     if( props.dataClient.password!==currentPassword){
