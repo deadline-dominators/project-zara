@@ -1,11 +1,11 @@
 .singin-container {
   /* background-color: red; */
   display: inline-flex;
-  position: absolute;
+  position: relative;
   gap: 8.0625rem;
   width: 81.5625rem;
   height: 48.8125rem;
-  top: 12.5rem;
+  top: 0rem;
   align-items: center;
 }
 .singin-img img {
