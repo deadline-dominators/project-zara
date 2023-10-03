@@ -5,8 +5,11 @@ import TopHeader from "./components/TopHeader/TopHeader.js";
 import NavBar from "./components/NavBar/NavBar.js";
 import SingUp from "./components/SingUp/SingUp.js";
 import Singin from "./components/Singin/Singin.js";
-import Card from "./components/card/Card.js";
-import Account from "./components/account/Account.js";
+import Cards from "./components/card/Cards.js";
+import Accounts from "./components/account/Accounts.js";
+import Home from "./components/HomePage/Home";
+import Contact from "./components/HomePage/Contact";
+
 function App() {
   const handleSignUp = async (obj) => {
     try {
@@ -34,6 +37,7 @@ function App() {
     }
   };
   return (
+
     <div>
       <TopHeader />
       <NavBar />
@@ -46,10 +50,14 @@ function App() {
           path="/singin"
           element={<Singin handleSingin={handleSingin} />}
         />
-        <Route path="/card" element={<Card />} />
-        <Route path="/account" element={<Account />} />
+        <Route path="/card" element={<Cards />} />
+        <Route path="/account" element={<Accounts />} />
+        <Route path="/" element={<Home />} />
+          <Route path="/contact" element={<Contact />} />
       </Routes>
     </div>
   );
 }
+
 export default App;
+

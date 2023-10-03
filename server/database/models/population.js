@@ -20,5 +20,5 @@ Client.belongsToMany(Seller,{ through: 'Client-Seller' })
 Seller.belongsToMany(Product, { through: 'Seller-Product' })
 Product.belongsToMany(Seller, { through: 'Seller-Product' })
 
-// connection.sync({ alter: true }).then(()=>{console.log("All models were synchronized successfully");}).catch((err)=>{throw err});
+// connection.sync({ force: true }).then(()=>{console.log("All models were synchronized successfully");}).catch((err)=>{throw err});
 // // console.log("All models were synchronized successfully.");
