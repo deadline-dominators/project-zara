@@ -4,7 +4,6 @@ import NavBar from "./components/NavBar/NavBar.js";
 import { Route, Routes } from "react-router-dom";
 import Home from "./components/HomePage/Home";
 import Contact from "./components/HomePage/Contact";
-
 function App() {
   return (
     <>
