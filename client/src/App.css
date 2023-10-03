@@ -3,3 +3,10 @@
 body {
     font-family: 'Poppins', sans-serif;
 }
+.link{
+    text-decoration: none;
+    color: black;
+}
+.link:focus{
+    border-bottom: 1px solid black;
+}

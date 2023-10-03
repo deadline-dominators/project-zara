@@ -28,9 +28,6 @@ const  updateAccout=()=>{
 
 
 }
-
-
-
     return (
         
       <div

@@ -1,5 +1,5 @@
 import React,{useState} from "react"
-import "./card.css"
+import "./cards.css"
 
 const Card=(props)=>{
 const [incr,setInc]=useState(0)
