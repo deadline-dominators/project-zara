@@ -6,6 +6,7 @@ var cookieParser = require("cookie-parser");
 require("dotenv").config();
 const JWT_SECRET = process.env.jwt;
 const clientRouter = require("./routers/clientRouter.js");
+const routerProduct = require("./routers/productRouter.js")
 //temp
 const Product = require("./database/models/productModel.js");
 
@@ -24,6 +25,7 @@ app.use(cors());
 
 // here routers
 app.use("/api/ecommerce", clientRouter);
+app.use("/api/product",routerProduct)
 // temporaire
 const verifyToken = (token)=>{
     try {
