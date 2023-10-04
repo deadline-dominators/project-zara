@@ -1,3 +1,4 @@
+
 import React from "react";
 import "./contact.css";
 const Contact = () => {
@@ -34,5 +35,5 @@ const Contact = () => {
     </div>
   );
 };
+export default Contact
 
-export default Contact;
