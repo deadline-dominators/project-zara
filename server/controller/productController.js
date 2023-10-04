@@ -4,7 +4,7 @@ const Product = require('../database/models/productModel')
 module.exports = {
     getAll : async (req,res)=>{
         try {
-            const result = await Product.findAll()
+            const result = await Product.findAll({})
             res.json(result)
         } catch (error) {
             console.log(error);
