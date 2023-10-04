@@ -1,6 +1,6 @@
-import "./NavBar.css"
+import "./NavBar.css";
 import React from "react";
-import {  Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 export default function NavBar() {
   return (
     <div className="NavBar">
@@ -8,11 +8,15 @@ export default function NavBar() {
         <div className="NavWrapper">
           <h1 className="Logo">Exclusive</h1>
           <ul className="NavLinks">
-            <li><Link to='/'>Home</Link></li>
-            <li><Link to='/contact'>Contact</Link></li>
-            <li>About</li>
-          <Link className="link"  to="/singup" >
-            <li>Sign Up</li>
+            <li>
+              <Link className="link" to="/">Home</Link>
+            </li>
+            <li>
+              <Link className="link" to="/contact">Contact</Link>
+            </li>
+            <li><Link className="link" to="/contact">About</Link></li>
+            <Link className="link" to="/singup">
+              <li>Sign Up</li>
             </Link>
           </ul>
         </div>

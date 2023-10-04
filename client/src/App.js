@@ -51,14 +51,13 @@ function App() {
           path="/singin"
           element={<Singin handleSingin={handleSingin} />}
         />
+        <Route path="/" element={<Home />} />
         <Route path="/card" element={<Cards />} />
         <Route path="/account" element={<Accounts />} />
         <Route path="/" element={<Home />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/contact" element={<Contact />} />
-
       </Routes>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }
