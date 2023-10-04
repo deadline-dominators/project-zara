@@ -1,10 +1,13 @@
 .NavBar {
-    position: relative;
+    position: fixed;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100px;
     width: 100%;
+    top: 48px;
+    background-color: white;
+    z-index: 1;
     border-bottom: #B7B7B7 1px solid;
 }
 
