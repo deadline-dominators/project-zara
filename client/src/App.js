@@ -8,8 +8,9 @@ import Singin from "./components/Singin/Singin.js";
 import Cards from "./components/card/Cards.js";
 import Accounts from "./components/account/Accounts.js";
 import Home from "./components/HomePage/Home";
-import Contact from "./components/HomePage/Contact";
+// import Contact from "./components/HomePage/Contact";
 import Footer from "./components/Footer/Footer";
+import ECommerceHomePage from './components/HomePage/Contact.js'
 
 function App() {
   const handleSignUp = async (obj) => {
@@ -51,12 +52,13 @@ function App() {
           path="/singin"
           element={<Singin handleSingin={handleSingin} />}
         />
+        <Route path="/" element={<Home />} />
         <Route path="/card" element={<Cards />} />
         <Route path="/account" element={<Accounts />} />
-        <Route path="/" element={<Home />} />
-          <Route path="/contact" element={<Contact />} />
+        <Route path="/contact" element={<ECommerceHomePage />} />
+          {/* <Route path="/contact" element={<Contact />} /> */}
       </Routes>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }
