@@ -2,6 +2,8 @@
 
 body {
     font-family: 'Poppins', sans-serif;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 .link{
     text-decoration: none;
