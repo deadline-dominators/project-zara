@@ -8,9 +8,9 @@ import Singin from "./components/Singin/Singin.js";
 import Cards from "./components/card/Cards.js";
 import Accounts from "./components/account/Accounts.js";
 import Home from "./components/HomePage/Home";
-// import Contact from "./components/HomePage/Contact";
 import Footer from "./components/Footer/Footer";
-import About from "./components/about/About";
+
+import Contact from "./components/contact/Contact.js"
 
 
 function App() {
@@ -36,14 +36,14 @@ function App() {
       window.location.href = "/mainPage";
       console.log(response.data.response.data);
     } catch (error) {
-      throw error;
+      console.log(error);
     }
   };
   return (
 
     <div>
-      <TopHeader />
-      <NavBar />
+      <TopHeader/>
+      <NavBar/>
       <Routes>
         <Route
           path="/singup"
@@ -58,10 +58,7 @@ function App() {
         <Route path="/account" element={<Accounts />} />
         <Route path="/" element={<Home />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/about" element={<About/>} />
 
-
-      
 
       </Routes>
       {/* <Footer /> */}
