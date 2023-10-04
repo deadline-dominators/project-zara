@@ -25,11 +25,8 @@ const  updateAccout=()=>{
         props.dataClient.email=email
         return 
     }
-
-
 }
-    return (
-        
+    return (       
       <div
       style={{
         width: '870px',
@@ -43,8 +40,7 @@ const  updateAccout=()=>{
        justifyContent:"flex-end",
        alignContent:"flex-end",
        left :"500px",
-       top :"100px"
-    
+       top :"100px"   
 
       }}
     >
