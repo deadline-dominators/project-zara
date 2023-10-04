@@ -10,7 +10,8 @@ import Accounts from "./components/account/Accounts.js";
 import Home from "./components/HomePage/Home";
 // import Contact from "./components/HomePage/Contact";
 import Footer from "./components/Footer/Footer";
-import ECommerceHomePage from './components/HomePage/Contact.js'
+import About from "./components/about/About";
+
 
 function App() {
   const handleSignUp = async (obj) => {
@@ -55,8 +56,13 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/card" element={<Cards />} />
         <Route path="/account" element={<Accounts />} />
-        <Route path="/contact" element={<ECommerceHomePage />} />
-          {/* <Route path="/contact" element={<Contact />} /> */}
+        <Route path="/" element={<Home />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/about" element={<About/>} />
+
+
+      
+
       </Routes>
       {/* <Footer /> */}
     </div>
