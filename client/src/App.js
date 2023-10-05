@@ -1,4 +1,5 @@
 import "./App.css";
+import React, { useEffect } from 'react';
 import { Routes, Route, Link, Outlet, useLocation, useNavigate } from 'react-router-dom';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import axios from "axios";
@@ -44,6 +45,11 @@ function App() {
       console.log(error);
     }
   };
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
+
   return (
     <div>
       <TopHeader />
