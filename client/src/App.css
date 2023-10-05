@@ -5,13 +5,7 @@ body {
   overflow-y: scroll;
   overflow-x: hidden;
 }
-.link {
-  text-decoration: none;
-  color: black;
-}
-.link:focus {
-  border-bottom: 1px solid black;
-}
+
 
 /* App.css */
 /* Common styles for route transitions */
