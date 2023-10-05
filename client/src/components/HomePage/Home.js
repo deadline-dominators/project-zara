@@ -4,6 +4,11 @@ import CategoryList from "./HomeLayout/CategorysList";
 import ImageSlider from "./HomeLayout/ImageSlider";
 import FlashSalesProducts from "./FlashSalesProducts";
 import SpeakerBanner from '../../assests/frame600.png'
+import ProductsShow from "./HomeLayout/ProductsShow";
+import NewArrival from "./HomeLayout/NewArrival";
+import frame1 from '../../assests/Frame 701.svg'
+import frame2 from '../../assests/Frame 702.svg'
+import frame3 from '../../assests/Frame 704.svg'
 
 export default function Home() {
   return (
@@ -343,6 +348,17 @@ export default function Home() {
         </div>
       </div>
       <img src={SpeakerBanner} alt="" />
+      </section>
+      <section className="OurProduct">
+        <ProductsShow />
+      </section>
+      <section className="new_arrival">
+        <NewArrival />
+      </section>
+      <section className="bottom">
+        <div><img src={frame1} alt="" /></div>
+        <div><img src={frame2} alt="" /></div>
+        <div><img src={frame3} alt="" /></div>
       </section>
     </div>
   );

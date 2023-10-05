@@ -1,6 +1,5 @@
 .footer {
     position: relative;
-    top: 100px;
     display: flex;
     gap: 200px;
     justify-content: center;
@@ -14,8 +13,8 @@
 .FooterContainer {
     position: absolute;
     display: flex;
-    justify-content: start;
-    align-items: start;
+    justify-content: flex-start;
+    align-items: flex-start;
     gap: 120px;
 }
 

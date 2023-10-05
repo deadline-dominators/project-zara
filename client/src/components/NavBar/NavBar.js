@@ -14,7 +14,7 @@ export default function NavBar() {
             <li>
               <Link className="link" to="/contact">Contact</Link>
             </li>
-            <li><Link className="link" to="/contact">About</Link></li>
+            <li><Link className="link" to="/about">About</Link></li>
             <Link className="link" to="/singup">
               <li>Sign Up</li>
             </Link>

@@ -85,7 +85,7 @@
   left: 16.13%;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-end;
   justify-content: flex-start;
 }
 .seconds {

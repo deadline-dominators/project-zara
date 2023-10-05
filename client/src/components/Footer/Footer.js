@@ -64,7 +64,7 @@ function Footer() {
     <div
     style={{
       width: '100%',
-      height: '420px',
+      height: '330px',
       paddingTop: '80px',
       paddingBottom: '24px',
       background: 'black',

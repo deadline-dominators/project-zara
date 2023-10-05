@@ -1,5 +1,6 @@
 import "./App.css";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Link, Outlet, useLocation, useNavigate } from 'react-router-dom';
+import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import axios from "axios";
 import TopHeader from "./components/TopHeader/TopHeader.js";
 import NavBar from "./components/NavBar/NavBar.js";
@@ -8,19 +9,23 @@ import Singin from "./components/Singin/Singin.js";
 import Cards from "./components/card/Cards.js";
 import Accounts from "./components/account/Accounts.js";
 import Home from "./components/HomePage/Home";
+import About from './components/about/About'
 import Footer from "./components/Footer/Footer";
+import ProductsDetails from "./components/productDetails/ProductsDetails";
 
-import Contact from "./components/contact/Contact.js"
-
+import Contact from "./components/contact/Contact.js";
 
 function App() {
+  const location = useLocation();
+  const navigate = useNavigate();
+
   const handleSignUp = async (obj) => {
     try {
       const response = await axios.post(
         "http://localhost:3000/api/ecommerce/singup",
         obj
       );
-      window.location.href = "/singin";
+      navigate('/singin');
       console.log(response);
     } catch (error) {
       console.log(error);
@@ -33,18 +38,26 @@ function App() {
         obj
       );
       localStorage.setItem("token", response.data.response.data);
-      window.location.href = "/mainPage";
+      navigate('/mainPage');
       console.log(response.data.response.data);
     } catch (error) {
       console.log(error);
     }
   };
   return (
-
     <div>
-      <TopHeader/>
-      <NavBar/>
-      <Routes>
+      <TopHeader />
+      <NavBar />
+
+      <TransitionGroup className="transition-group">
+        {/* CSSTransition for each route */}
+        <CSSTransition
+          key={location.key}
+          classNames="fade"
+          timeout={300}
+          appear
+        >
+                <Routes>
         <Route
           path="/singup"
           element={<SingUp handleSignUp={handleSignUp} />}
@@ -56,15 +69,16 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/card" element={<Cards />} />
         <Route path="/account" element={<Accounts />} />
-        <Route path="/" element={<Home />} />
-          <Route path="/contact" element={<Contact />} />
-
-
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
-      {/* <Footer /> */}
+        </CSSTransition>
+      </TransitionGroup>
+
+
+      <Footer />
     </div>
   );
 }
 
 export default App;
-

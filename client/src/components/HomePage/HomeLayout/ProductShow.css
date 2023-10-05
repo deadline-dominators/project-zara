@@ -1,0 +1,97 @@
+.OurProduct {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 50rem;
+}
+
+.OurProduct_title {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 40rem;
+}
+
+.frameTitle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.redIcon {
+    background-color: #DB4444;
+    width: 20px;
+    height: 40px;
+    border-radius: 4px;
+}
+
+.frameTitle_underTitle {
+    position: relative;
+    font-size: var(--heading-36px-semibold-size);
+    letter-spacing: 0.04em;
+    width: 25rem;
+    line-height: 3rem;
+    font-weight: 600;
+    font-family: var(--heading-24px-semibold);
+}
+
+.arrows {
+    position: relative;
+    top: 6rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 2rem;
+}
+
+.arrowLeft {
+    background-color: #F5F5F5;
+    height: 46px;
+    width: 46px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25px;
+}
+
+.arrowRight {
+    background-color: #F5F5F5;
+    height: 46px;
+    width: 46px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25px;
+}
+
+.cards {
+    position: relative;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    gap: 40px;
+    
+}
+
+.allProduct {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 70px;
+    padding-bottom: 100px;   
+}
+
+.View_All_Products {
+    width: 234px;
+    height: 56px;
+    padding: 16px 48px 16px 48px;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 500;
+    background-color: #DB4444;
+    border: none;
+    border-radius: 4px;
+    color: white;
+}

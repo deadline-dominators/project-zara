@@ -2,7 +2,7 @@ import "./Home.css";
 import "./contact.css"
 import React from "react";
 import Ecran from "../../assests/ecran.png";
-import Stars from "../../assests/Vector.png";
+import Stars from "../../assests/vector.png";
 
 function FlashSalesProducts() {
   return (
