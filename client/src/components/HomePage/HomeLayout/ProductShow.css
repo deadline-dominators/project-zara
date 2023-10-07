@@ -71,7 +71,7 @@
     display: grid;
     grid-template-columns: auto auto auto auto;
     gap: 40px;
-    
+    right: 2rem;
 }
 
 .allProduct {

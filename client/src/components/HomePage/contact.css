@@ -598,8 +598,8 @@
 .frame-parent5,
 .frame-parent6 {
   display: flex;
-  justify-content: centfer;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
 .frame-parent6 {
   flex-direction: column;
@@ -625,6 +625,7 @@
   height: 3.5rem;
   overflow: hidden;
 }
+
 .category-phone {
   position: relative;
   border-radius: var(--br-9xs);
@@ -745,6 +746,7 @@
   background-color: var(--button2);
 }
 
+
 .gaming {
   position: absolute;
   bottom: 1.5rem;
@@ -767,7 +769,8 @@
   position: absolute;
 
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
+  justify-content: center;
   gap: var(--gap-41xl);
 }
 .frame-parent8 {

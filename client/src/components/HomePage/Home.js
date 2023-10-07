@@ -1,5 +1,6 @@
 import "./Home.css";
 import React from "react";
+import { Link } from "react-router-dom";
 import CategoryList from "./HomeLayout/CategorysList";
 import ImageSlider from "./HomeLayout/ImageSlider";
 import FlashSalesProducts from "./FlashSalesProducts";
@@ -9,6 +10,13 @@ import NewArrival from "./HomeLayout/NewArrival";
 import frame1 from '../../assests/Frame 701.svg'
 import frame2 from '../../assests/Frame 702.svg'
 import frame3 from '../../assests/Frame 704.svg'
+import PhoneSVG from '../../assests/Category-CellPhone.svg'
+import ComputerSVG from '../../assests/Category-Computer.svg'
+import SmartWatchSVG from '../../assests/Category-SmartWatch.svg'
+import CameraSVG from '../../assests/Category-Camera.svg'
+import HeadPhonesSVG from '../../assests/Category-Headphone.svg'
+import GamingSVG from '../../assests/Category-Gamepad.svg'
+ 
 
 export default function Home() {
   return (
@@ -82,7 +90,9 @@ export default function Home() {
           </div>
         </div>
         <div className="todayProducts">
-          <FlashSalesProducts />
+          <Link to="/productdetails" >
+            <FlashSalesProducts />
+          </Link>
           <FlashSalesProducts />
           <FlashSalesProducts />
           <FlashSalesProducts />
@@ -91,7 +101,7 @@ export default function Home() {
           <FlashSalesProducts />
         </div>
         <div className="view-all-products-container">
-          <div className="shop-now">View All Products</div>
+          <div className="shop-now"><Link to='*'>View All Products</Link></div>
         </div>
       </section>
       <section className="BrowseByCategory">
@@ -106,18 +116,6 @@ export default function Home() {
             </div>
             <div className="flash-sales">Browse By Category</div>
           </div>
-          <div className="fill-with-left-arrow-parent">
-            <img
-              className="fill-with-left-arrow"
-              alt=""
-              src="/fill-with-left-arrow1.svg"
-            />
-            <img
-              className="fill-with-left-arrow"
-              alt=""
-              src="/fill-with-right-arrow1.svg"
-            />
-          </div>
         </div>
         <div className="category-phone-parent">
           <div className="category-phone">
@@ -125,7 +123,7 @@ export default function Home() {
             <img
               className="category-cellphone-icon"
               alt=""
-              src="/categorycellphone.svg"
+              src={PhoneSVG}
             />
           </div>
           <div className="category-phone">
@@ -133,16 +131,13 @@ export default function Home() {
             <img
               className="category-computer-icon"
               alt=""
-              src="/categorycomputer.svg"
+              src={ComputerSVG}
             />
           </div>
           <div className="category-phone">
             <div className="smartwatch">SmartWatch</div>
             <div className="category-cellphone-icon">
-              <img className="vector-icon27" alt="" src="/vector27.svg" />
-              <img className="vector-icon28" alt="" src="/vector28.svg" />
-              <img className="vector-icon29" alt="" src="/vector29.svg" />
-              <img className="vector-icon30" alt="" src="/vector30.svg" />
+              <img className="vector-icon27" alt="" src={SmartWatchSVG} />
               <div className="line-parent">
                 <div className="line-div" />
                 <div className="frame-child3" />
@@ -155,7 +150,7 @@ export default function Home() {
             <img
               className="category-cellphone-icon"
               alt=""
-              src="/categorycamera.svg"
+              src={CameraSVG}
             />
           </div>
           <div className="category-phone">
@@ -163,7 +158,7 @@ export default function Home() {
             <img
               className="category-cellphone-icon"
               alt=""
-              src="/categoryheadphone.svg"
+              src={HeadPhonesSVG}
             />
           </div>
           <div className="category-phone">
@@ -171,7 +166,7 @@ export default function Home() {
             <img
               className="category-cellphone-icon"
               alt=""
-              src="/categorygamepad.svg"
+              src={GamingSVG}
             />
           </div>
         </div>

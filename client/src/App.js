@@ -1,20 +1,20 @@
 import "./App.css";
 import React, { useEffect } from 'react';
-import { Routes, Route, Link, Outlet, useLocation, useNavigate } from 'react-router-dom';
+import { Routes, Route, useLocation, useNavigate } from 'react-router-dom';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
-import axios from "axios";
-import TopHeader from "./components/TopHeader/TopHeader.js";
-import NavBar from "./components/NavBar/NavBar.js";
-import SingUp from "./components/SingUp/SingUp.js";
-import Singin from "./components/Singin/Singin.js";
-import Cards from "./components/card/Cards.js";
-import Accounts from "./components/account/Accounts.js";
-import Home from "./components/HomePage/Home";
-import About from './components/about/About'
-import Footer from "./components/Footer/Footer";
-import ProductsDetails from "./components/productDetails/ProductsDetails";
-
-import Contact from "./components/contact/Contact.js";
+import axios              from "axios";
+import TopHeader          from "./components/TopHeader/TopHeader.js";
+import NavBar             from "./components/NavBar/NavBar.js";
+import SingUp             from "./components/SingUp/SingUp.js";
+import Singin             from "./components/Singin/Singin.js";
+import Cards              from "./components/card/Cards.js";
+import Accounts           from "./components/account/Accounts.js";
+import Home               from "./components/HomePage/Home";
+import About              from './components/about/About'
+import Footer             from "./components/Footer/Footer";
+import ProductsDetails    from "./components/productDetails/ProductsDetails";
+import Contact            from "./components/contact/Contact.js";
+import Error              from "./components/error 404/Error.js";
 
 function App() {
   const location = useLocation();
@@ -39,7 +39,6 @@ function App() {
         obj
       );
       localStorage.setItem("token", response.data.response.data);
-      navigate('/mainPage');
       console.log(response.data.response.data);
     } catch (error) {
       console.log(error);
@@ -77,11 +76,11 @@ function App() {
         <Route path="/account" element={<Accounts />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/productdetails" element={<ProductsDetails />} />
+        <Route path="*" element={<Error />} />
       </Routes>
         </CSSTransition>
       </TransitionGroup>
-
-
       <Footer />
     </div>
   );
