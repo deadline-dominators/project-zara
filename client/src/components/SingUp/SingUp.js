@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import LazyLoad from "react-lazyload";
 import image from "../../assests/dl.beatsnoop 1.png";
 import "./SingUp.css";
 const SingUp = ({ handleSignUp }) => {
@@ -8,7 +9,9 @@ const SingUp = ({ handleSignUp }) => {
   return (
     <div className="singup-container">
       <div className="singup-img">
-        <img src={image} alt="" />
+        <LazyLoad height={200}>
+          <img className="singup_image" src={image} alt="" loading="lazy" />
+        </LazyLoad>
       </div>
       <div className="singup-form">
         <div className="singup-text">
