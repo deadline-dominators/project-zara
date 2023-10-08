@@ -1,6 +1,6 @@
 import "./App.css";
-import React, { useEffect } from 'react';
-import { Routes, Route, useLocation, useNavigate } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { Routes, Route, useLocation, useNavigate, useSearchParams } from 'react-router-dom';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import axios              from "axios";
 import TopHeader          from "./components/TopHeader/TopHeader.js";
@@ -18,10 +18,24 @@ import Cart               from "./components/card/Cards.js"
 import WishList           from "./components/wishList/WishList";
 import Error              from "./components/error 404/Error.js";
 import dummyData          from "./fakeData/fakeData.js"
-
 function App() {
   const location = useLocation();
   const navigate = useNavigate();
+  const [data,setData]=useState([])
+  console.log(data);
+useEffect(()=>{
+  fetchData()
+},[])
+
+const  fetchData = async()=>{
+  try {
+    const response = await axios.get("http://localhost:3001/api/product/getAll")
+    setData(response.data)
+  } catch (error) {
+    throw  error
+  }
+}
+
 
   const handleSignUp = async (obj) => {
     try {
@@ -63,7 +77,7 @@ function App() {
           path="/singin"
           element={<Singin />}
         />
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Home data={data} />} />
         <Route path="/card" element={<Cards />} />
         <Route path="/account" element={<Accounts />} />
         <Route path="/about" element={<About />} />
@@ -72,6 +86,7 @@ function App() {
         <Route path="/wishlist" element={<WishList />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="*" element={<Error />} />
+   
       </Routes>
         </CSSTransition>
       </TransitionGroup>

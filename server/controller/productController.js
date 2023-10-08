@@ -39,7 +39,16 @@ module.exports = {
      } catch (error) {
         throw error
      }
+    },
 
+    filter: async(req,res)=>{
+        try {
+            const response = await Product.findOne({where:{name:req.params.name}})
+            res.json(response)
+        } catch (error) {
+            throw error
+        }
     }
+
 
 }
