@@ -14,7 +14,10 @@ import About              from './components/about/About'
 import Footer             from "./components/Footer/Footer";
 import ProductsDetails    from "./components/productDetails/ProductsDetails";
 import Contact            from "./components/contact/Contact.js";
+import Cart               from "./components/card/Cards.js"
+import WishList           from "./components/wishList/WishList";
 import Error              from "./components/error 404/Error.js";
+import dummyData          from "./fakeData/fakeData.js"
 
 function App() {
   const location = useLocation();
@@ -32,18 +35,7 @@ function App() {
       console.log(error);
     }
   };
-  const handleSingin = async (obj) => {
-    try {
-      const response = await axios.post(
-        "http://localhost:3000/api/ecommerce/login",
-        obj
-      );
-      localStorage.setItem("token", response.data.response.data);
-      console.log(response.data.response.data);
-    } catch (error) {
-      console.log(error);
-    }
-  };
+
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -69,7 +61,7 @@ function App() {
         />
         <Route
           path="/singin"
-          element={<Singin handleSingin={handleSingin} />}
+          element={<Singin />}
         />
         <Route path="/" element={<Home />} />
         <Route path="/card" element={<Cards />} />
@@ -77,6 +69,8 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/productdetails" element={<ProductsDetails />} />
+        <Route path="/wishlist" element={<WishList />} />
+        <Route path="/cart" element={<Cart />} />
         <Route path="*" element={<Error />} />
       </Routes>
         </CSSTransition>

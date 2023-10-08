@@ -79,7 +79,7 @@ module.exports= {
     getAllclients : async(req,res)=>{
         try {
             const response = await Client.findAll()
-            res.status(200).sedn(response)
+            res.json(response)
         } catch (error) {
             throw error
         }

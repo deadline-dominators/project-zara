@@ -8,7 +8,12 @@
   top: 48px;
   background-color: white;
   z-index: 1;
-  border-bottom: #b7b7b7 1px solid;
+  border-bottom: #b7b7b7 1px solid; 
+  transition: box-shadow 0.3s ease; 
+}
+
+.NavBar.shadow {
+  box-shadow: 0px 2px 6px rgba(40, 40, 40, 0.2);
 }
 
 .NavLinks {
@@ -80,7 +85,7 @@
   justify-content: center;
   align-items: center;
   height: 38px;
-  gap: 30px;
+  gap: 22px;
 }
 
 .SearchBar {
@@ -97,6 +102,7 @@
 .Search {
   background-color: transparent;
   height: 20px;
+  width: 200px;
   border: none;
   outline: none;
   font-size: 16px;
@@ -120,4 +126,8 @@
 .bi-cart3 {
   display: flex;
   cursor: pointer;
+}
+
+#cart {
+  text-decoration: none;
 }

@@ -6,7 +6,7 @@ var cookieParser = require("cookie-parser");
 require("dotenv").config();
 const JWT_SECRET = process.env.jwt;
 const clientRouter = require("./routers/clientRouter.js");
-const routerProduct = require("./routers/productRouter.js")
+const routerProduct = require("./routers/productRouter.js");
 //temp
 const Product = require("./database/models/productModel.js");
 
@@ -17,25 +17,34 @@ const app = express();
 
 const bcrypt = require("bcryptjs");
 const salt = 10;
-app.use(bodyparser.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(bodyparser.urlencoded({ extended: true }));
 app.use(cookieParser());
-const port = 3000;
+const port = 3001;
+
+const corsOptions = {
+  origin: "http://localhost:3000", // Replace with the origin of your frontend application
+  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+  credentials: true, // Allow cookies and credentials to be sent cross-origin
+};
 app.use(cors());
 
 // here routers
 app.use("/api/ecommerce", clientRouter);
-app.use("/api/product",routerProduct)
+app.use("/api/product", routerProduct);
 // temporaire
-const verifyToken = (token)=>{
-    try {
-        const verify = jwt.verify(token, process.env.jwt);
-        if(verify.type==='client'){return true;}
-        else{return false};
-    } catch (error) {
-        console.log(JSON.stringify(error),"error");
-        return false;
+const verifyToken = (token) => {
+  try {
+    const verify = jwt.verify(token, process.env.jwt);
+    if (verify.type === "client") {
+      return true;
+    } else {
+      return false;
     }
+  } catch (error) {
+    console.log(JSON.stringify(error), "error");
+    return false;
+  }
 };
 
 app.post(
@@ -48,11 +57,11 @@ app.post(
         console.log(token);
         console.log("im in veryfy token");
         next();
-        return 
-    }
-    res.status(401).send("you are unothorized");  
+        return;
+      }
+      res.status(401).send("you are unothorized");
     } catch (error) {
-        throw error
+      throw error;
     }
   },
   async (req, res) => {
