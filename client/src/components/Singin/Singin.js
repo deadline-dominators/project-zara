@@ -23,6 +23,11 @@ const Singin = () => {
         // Redirect to the home page or any other desired page
         navigate("/");
       }
+      if (!email || !password) {
+        // Display an error message or prevent the form submission
+        console.log("Email and password are required.");
+        return;
+      }
     } catch (error) {
       console.log(error);
     }

@@ -113,7 +113,7 @@ const fakeData = [
     name: "Breed Dry Dog Food",
     description: "hello",
     price: 100,
-    quantity: 2,
+    quantity:2,
     size: "d",
     image:
       "https://th.bing.com/th/id/R.820be71b83cfc75afdb0586b8fe980b1?rik=A8LixHBcV1J5Lw&pid=ImgRaw&r=0",

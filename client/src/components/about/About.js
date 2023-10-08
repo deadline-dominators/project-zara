@@ -1,3 +1,4 @@
+import React from "react";
 import "./about.css";
 import image from "../../assests/2girls.png";
 import worker1 from "../../assests/khalil.jpg";
