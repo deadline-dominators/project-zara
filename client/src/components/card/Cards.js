@@ -6,7 +6,7 @@ import CancelIcon from "../../assests/icon-cancel.svg";
 import Screen from "../../assests/ecran.png";
 import { Link } from "react-router-dom";
 
-function Cards() {
+function Cards({data}) {
   return (
     <div className="CardContainer">
       <div className="AllContainer">

@@ -2,7 +2,7 @@ import "./ProductShow.css";
 import '../Home.css'
 import React from "react";
 
-function ProductsShow() {
+function ProductsShow({data}) {
   return (
     <div className="allProduct">
       <div className="OurProduct">
@@ -47,7 +47,40 @@ function ProductsShow() {
         </div>
       </div>
       <div className="cards">
-        <div className="cart-with-flat-discount">
+        {data.slice(0, 8).map(product => {return (
+                <div className="cart-with-flat-discount">
+                <div className="discount-percent-parent">
+                  <div className="fill-heart-parent">
+                    <img className="fill-heart-icon" alt="" src="/fill-heart9.svg" />
+                    <img className="fill-heart-icon" alt="" src="/fill-eye9.svg" />
+                  </div>
+                  <div className="gammaxx-l240-argb-1-500x500-1-wrapper">
+                    <img
+                      className="sam-moghadam-khamseh-l-7mqshl-icon"
+                      alt=""
+                      src={product.firstImage}
+                    />
+                  </div>
+                </div>
+                <div className="the-north-coat-parent">
+                  <div className="shop-now">{product.name}</div>
+                  <div className="wrapper">
+                    <div className="shop-now">${product.price}</div>
+                  </div>
+                  <div className="five-star-parent">
+                    <div className="five-star">
+                      <img className="vector-icon" alt="" src="/vector44.svg" />
+                      <img className="vector-icon" alt="" src="/vector45.svg" />
+                      <img className="vector-icon" alt="" src="/vector46.svg" />
+                      <img className="vector-icon" alt="" src="/vector47.svg" />
+                      <img className="vector-icon" alt="" src="/vector48.svg" />
+                    </div>
+                    <div className="div7">(65)</div>
+                  </div>
+                </div>
+              </div>
+        )})}
+        {/* <div className="cart-with-flat-discount">
           <div className="discount-percent-parent">
             <div className="fill-heart-parent">
               <img className="fill-heart-icon" alt="" src="/fill-heart9.svg" />
@@ -263,38 +296,7 @@ function ProductsShow() {
               <div className="div7">(65)</div>
             </div>
           </div>
-        </div>
-        <div className="cart-with-flat-discount">
-          <div className="discount-percent-parent">
-            <div className="fill-heart-parent">
-              <img className="fill-heart-icon" alt="" src="/fill-heart9.svg" />
-              <img className="fill-heart-icon" alt="" src="/fill-eye9.svg" />
-            </div>
-            <div className="gammaxx-l240-argb-1-500x500-1-wrapper">
-              <img
-                className="sam-moghadam-khamseh-l-7mqshl-icon"
-                alt=""
-                src="/sammoghadamkhamsehl-7mqshl-auunsplash-1@2x.png"
-              />
-            </div>
-          </div>
-          <div className="the-north-coat-parent">
-            <div className="shop-now">Small BookSelf</div>
-            <div className="wrapper">
-              <div className="shop-now">$360</div>
-            </div>
-            <div className="five-star-parent">
-              <div className="five-star">
-                <img className="vector-icon" alt="" src="/vector44.svg" />
-                <img className="vector-icon" alt="" src="/vector45.svg" />
-                <img className="vector-icon" alt="" src="/vector46.svg" />
-                <img className="vector-icon" alt="" src="/vector47.svg" />
-                <img className="vector-icon" alt="" src="/vector48.svg" />
-              </div>
-              <div className="div7">(65)</div>
-            </div>
-          </div>
-        </div>
+        </div> */}
       </div>
       <button className="View_All_Products">View All Products</button>
     </div>
