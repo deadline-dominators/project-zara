@@ -28,6 +28,11 @@ const Singin = () => {
       if (response.status === 200) {
         navigate("/");
       }
+      if (!email || !password) {
+        // Display an error message or prevent the form submission
+        console.log("Email and password are required.");
+        return;
+      }
     } catch (error) {
       console.log(error);
     }

@@ -79,11 +79,21 @@ module.exports= {
     getAllclients : async(req,res)=>{
         try {
             const response = await Client.findAll()
-            res.json(response)
+            res.status(200).send(response)
         } catch (error) {
             throw error
         }
     }, 
+
+    getByEmail : async (req,res)=>{
+        try {
+            const response = await Client.findAll({where:{email:req.params.email}})
+            res.status(200).send(response)
+        } catch (error) {
+            throw error
+        }
+    }
+
 
 
 
