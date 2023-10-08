@@ -1,5 +1,4 @@
 const Admin = require("../database/models/adminModel.js");
-
 module.exports = {
   getAll: async (req, res) => {
     try {
