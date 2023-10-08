@@ -48,8 +48,9 @@
 }
 
 .about {
-  height: 320vh;
+  height: 0vh;
   position: relative;
+  left: 70px;
 }
 
 .about-child {

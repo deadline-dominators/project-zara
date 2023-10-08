@@ -1,22 +1,27 @@
 .singin-container {
   /* background-color: red; */
-  display: inline-flex;
+  display: flex;
   position: relative;
+  justify-content: center;
+  align-items: center;
   gap: 8.0625rem;
   width: 81.5625rem;
-  height: 48.8125rem;
-  top: 0rem;
+  height: 55.8125rem;
+  top: -2rem;
+  left: 9rem;
   align-items: center;
 }
 .singin-img img {
-  width: 57.4375rem;
-  height: 44.125rem;
+  width: 45.4375rem;
+  height: 38.125rem;
 }
 .singin-img {
-  padding-top: 75px;
+  position: relative;
+  top: 5rem;
+  left: 5rem;
+  /* padding-top: 75px; */
   background: #cbe4e8;
-  border-top-left-radius: 4px;
-  border-top-right-radius: 4px;
+  border-radius: 4px;
   overflow: hidden;
   justify-content: flex-end;
   align-items: center;
@@ -24,11 +29,11 @@
 }
 .singin-form {
   width: 371px;
-  height: 530px;
+  height: 490px;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: flex-start;
-  gap: 48px;
+  gap: 40px;
   display: inline-flex;
 }
 .singin-form input {

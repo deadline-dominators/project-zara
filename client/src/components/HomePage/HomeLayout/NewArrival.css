@@ -1,0 +1,26 @@
+.gallery {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    border-radius: 4px;
+}
+
+.second_elec {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    border-radius: 4px;
+}
+.secon_child {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+img {
+    border-radius: 4px;
+}

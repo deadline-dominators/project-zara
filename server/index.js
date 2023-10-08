@@ -12,18 +12,21 @@ const sellerRouter = require("./routers/sellerRouter.js");
 const adminRouter = require("./routers/adminRouter.js")
 //temp
 const Product = require("./database/models/productModel.js");
-
 const connection = require("./database/index.js");
 const population = require("./database/models/population.js");
-
 const app = express();
-
 const bcrypt = require("bcryptjs");
 const salt = 10;
-app.use(bodyparser.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(bodyparser.urlencoded({ extended: true }));
 app.use(cookieParser());
-const port = 3000;
+const port = 3001;
+
+const corsOptions = {
+  origin: "http://localhost:3000", // Replace with the origin of your frontend application
+  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+  credentials: true, // Allow cookies and credentials to be sent cross-origin
+};
 app.use(cors());
 // here routers
 app.use("/api/ecommerce", clientRouter);
@@ -45,7 +48,6 @@ const verifyToken = (token) => {
     return false;
   }
 };
-
 app.post(
   "/addProduct",
   async (req, res, next) => {
@@ -73,7 +75,6 @@ app.post(
     }
   }
 );
-
 app.listen(port, () => {
   console.log(`app listenin on port ${port}`);
 });

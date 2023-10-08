@@ -1,31 +1,22 @@
+import React from "react";
 import "./about.css";
-import image from '../../assests/2girls.png';
-import worker1 from '../../assests/khalil.jpg';
-import worker2 from '../../assests/image 47.png';
-import worker3 from '../../assests/image 51.png';
-import linkedin from '../../assests/Icon-Linkedin.svg';
-import instagram from '../../assests/Instagram.svg';
-import twitter from '../../assests/twitter.svg';
-import point from '../../assests/point.svg';
-import frame701 from '../../assests/Frame 701.svg';
-import frame702 from '../../assests/Frame 702.svg';
-import frame703 from '../../assests/Frame 703.svg';
-import circle from '../../assests/Circle.svg';
-import white from '../../assests/white.svg';
-
-
-
+import image from "../../assests/2girls.png";
+import worker1 from "../../assests/khalil.jpg";
+import worker2 from "../../assests/image 47.png";
+import worker3 from "../../assests/image 51.png";
+import linkedin from "../../assests/Icon-Linkedin.svg";
+import instagram from "../../assests/Instagram.svg";
+import twitter from "../../assests/twitter.svg";
+import point from "../../assests/point.svg";
+import frame701 from "../../assests/Frame 701.svg";
+import frame702 from "../../assests/Frame 702.svg";
+import frame703 from "../../assests/Frame 703.svg";
+import circle from "../../assests/Circle.svg";
+import white from "../../assests/white.svg";
 
 const About = () => {
   return (
     <div className="about">
-      <img className="about-child" alt="" src="/line-3.svg" />
-      <div className="roadmap1">
-        <div className="account" >Home</div>
-        <img className="roadmap-child" alt="" src="/line-13.svg" />
-        <div className="english">About</div>
-    
-      </div>
       <div className="our-story-parent">
         <div className="our-story">Our Story</div>
         <div className="launced-in-2015-exclusive-is-parent">
@@ -186,4 +177,3 @@ const About = () => {
 };
 
 export default About;
-
