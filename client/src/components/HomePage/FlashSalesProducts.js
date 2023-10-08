@@ -2,7 +2,7 @@ import "./Home.css";
 import "./contact.css"
 import React from "react";
 import Ecran from "../../assests/ecran.png";
-import Stars from "../../assests/Vector.png";
+// import Stars from "../../assests/Vector.png";
 
 function FlashSalesProducts() {
   return (
@@ -32,11 +32,11 @@ function FlashSalesProducts() {
       </div>
       <div className="five-star-parent">
         <div className="five-star">
-          <i class="bi bi-star vector-icon"></i>
-          <i class="bi bi-star vector-icon"></i>
-          <i class="bi bi-star vector-icon"></i>
-          <i class="bi bi-star vector-icon"></i>
-          <i class="bi bi-star vector-icon"></i>
+          <i className="bi bi-star vector-icon"></i>
+          <i className="bi bi-star vector-icon"></i>
+          <i className="bi bi-star vector-icon"></i>
+          <i className="bi bi-star vector-icon"></i>
+          <i className="bi bi-star vector-icon"></i>
         </div>
         <div className="div7">(75)</div>
       </div>

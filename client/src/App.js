@@ -1,3 +1,4 @@
+import React, { useEffect, useState } from 'react';
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import axios from "axios";
@@ -5,21 +6,28 @@ import TopHeader from "./components/TopHeader/TopHeader.js";
 import NavBar from "./components/NavBar/NavBar.js";
 import SingUp from "./components/SingUp/SingUp.js";
 import Singin from "./components/Singin/Singin.js";
-import Cards from "./components/card/Cards.js";
+import Card from "./components/card/Cards.js";
 import Accounts from "./components/account/Accounts.js";
 import Home from "./components/HomePage/Home";
-import Footer from "./components/Footer/Footer";
-
+// import Footer from "./components/Footer/Footer";
 import Contact from "./components/contact/Contact.js"
 
 
 function App() {
+// const [client,setClient]=useState("")
+// useEffect(()=>{
+//   getOneClient()
+// },[])
+
+
+
   const handleSignUp = async (obj) => {
     try {
       const response = await axios.post(
         "http://localhost:3000/api/ecommerce/singup",
         obj
       );
+      
       window.location.href = "/singin";
       console.log(response);
     } catch (error) {
@@ -31,10 +39,11 @@ function App() {
       const response = await axios.post(
         "http://localhost:3000/api/ecommerce/login",
         obj
-      );
-      localStorage.setItem("token", response.data.response.data);
-      window.location.href = "/mainPage";
-      console.log(response.data.response.data);
+      )
+      localStorage.setItem("token",response.config.data);
+      console.log("here",response.config.data);
+
+      window.location.href = "/";
     } catch (error) {
       console.log(error);
     }
@@ -42,8 +51,8 @@ function App() {
   return (
 
     <div>
-      <TopHeader/>
-      <NavBar/>
+      <TopHeader />
+      <NavBar />
       <Routes>
         <Route
           path="/singup"
@@ -54,10 +63,9 @@ function App() {
           element={<Singin handleSingin={handleSingin} />}
         />
         <Route path="/" element={<Home />} />
-        <Route path="/card" element={<Cards />} />
-        <Route path="/account" element={<Accounts />} />
-        <Route path="/" element={<Home />} />
-          <Route path="/contact" element={<Contact />} />
+        <Route path="/card" element={<Card />} />
+        <Route path="/account"   element={<Accounts />} />
+        <Route path="/contact" element={<Contact />} />
 
 
       </Routes>

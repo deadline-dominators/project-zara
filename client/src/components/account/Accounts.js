@@ -1,6 +1,29 @@
-import React,{useState} from "react"
+import React,{useEffect, useState} from "react"
+import axios from "axios"
+
+
+
+
 
 const Account=(props)=>{
+const [client,setClient]=useState([])
+const userData = JSON.parse(localStorage.getItem('token'));
+useEffect(()=>{
+  getOneClient()
+},[])
+
+const getOneClient =async ()=>{
+  try {
+    const response = await axios.get(`http://localhost:3000/api/ecommerce/getEmail/${userData.email}`)
+    console.log("again",response);
+      setClient(response.data[0]) 
+  } catch (error) {
+    throw error
+  }
+}
+console.log("je suis",client);
+// getOneClient()
+
 const [firstName,setFirstName]=useState("")
 const [lastName,setLastName]=useState("")
 const [email,setEmail]=useState("")
@@ -98,8 +121,10 @@ const  updateAccout=()=>{
               position: 'relative',
             }}
           >
-            <input placeholder="   Md"
+            <input
+            defaultValue={client.name} 
               style={{
+                
                 width: '330px',
                 height: '50px',
                 left: '0px',
@@ -198,7 +223,9 @@ const  updateAccout=()=>{
               position: 'relative',
             }}
           >
-            <input   onChnage={(e)=>{
+            <input 
+              defaultValue={client.email}
+            onChnage={(e)=>{
                 setEmail(e.target.value)
             }} placeholder=" rimel1111@gmail.com"
               style={{

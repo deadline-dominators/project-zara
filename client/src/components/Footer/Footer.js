@@ -1,5 +1,7 @@
 import './Footer.css'
 import React from 'react';
+import { Link } from "react-router-dom";
+
 import CodeQR from '../../assests/codeQR.jpg'
 import GooglePlay from '../../assests/googlePlay.png'
 import AppStore from '../../assests/appStore.png'
@@ -309,7 +311,9 @@ function Footer() {
               wordWrap: 'break-word',
             }}
           >
+            <Link to="/account">
             My Account
+            </Link>
           </div>
           <div
             style={{

@@ -1,6 +1,4 @@
 const Product = require('../database/models/productModel')
-
-
 module.exports = {
     getAll : async (req,res)=>{
         try {
@@ -36,7 +34,7 @@ module.exports = {
     },
     update : async (req,res)=>{
      try { 
-        const result = await Product.update(req.body, {where:{id:req.params.id}})
+        const result = await Product.update(req.body, {where:{id:req.params.idr}})
         res.json(result)
      } catch (error) {
         throw error

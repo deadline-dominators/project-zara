@@ -6,7 +6,10 @@ var cookieParser = require("cookie-parser");
 require("dotenv").config();
 const JWT_SECRET = process.env.jwt;
 const clientRouter = require("./routers/clientRouter.js");
-const routerProduct = require("./routers/productRouter.js")
+const routerProduct = require("./routers/productRouter.js");
+const categoryRouter = require("./routers/categoryRouter.js");
+const sellerRouter = require("./routers/sellerRouter.js");
+const adminRouter = require("./routers/adminRouter.js")
 //temp
 const Product = require("./database/models/productModel.js");
 
@@ -22,20 +25,25 @@ app.use(express.json());
 app.use(cookieParser());
 const port = 3000;
 app.use(cors());
-
 // here routers
 app.use("/api/ecommerce", clientRouter);
-app.use("/api/product",routerProduct)
+app.use("/api/product", routerProduct);
+app.use("/api/category", categoryRouter);
+app.use("/api/seller", sellerRouter);
+app.use("/api/admin",adminRouter)
 // temporaire
-const verifyToken = (token)=>{
-    try {
-        const verify = jwt.verify(token, process.env.jwt);
-        if(verify.type==='client'){return true;}
-        else{return false};
-    } catch (error) {
-        console.log(JSON.stringify(error),"error");
-        return false;
+const verifyToken = (token) => {
+  try {
+    const verify = jwt.verify(token, process.env.jwt);
+    if (verify.type === "client") {
+      return true;
+    } else {
+      return false;
     }
+  } catch (error) {
+    console.log(JSON.stringify(error), "error");
+    return false;
+  }
 };
 
 app.post(
@@ -48,11 +56,11 @@ app.post(
         console.log(token);
         console.log("im in veryfy token");
         next();
-        return 
-    }
-    res.status(401).send("you are unothorized");  
+        return;
+      }
+      res.status(401).send("you are unothorized");
     } catch (error) {
-        throw error
+      throw error;
     }
   },
   async (req, res) => {
