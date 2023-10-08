@@ -18,7 +18,7 @@ import HeadPhonesSVG from '../../assests/Category-Headphone.svg'
 import GamingSVG from '../../assests/Category-Gamepad.svg'
  
 
-export default function Home() {
+export default function Home({data}) {
   return (
     <div className="HomeContainer">
       <section className="landingPage">
@@ -93,7 +93,8 @@ export default function Home() {
           <Link to="/productdetails" >
             <FlashSalesProducts />
           </Link>
-          <FlashSalesProducts />
+          {data.map((e)=>{ return <FlashSalesProducts e={e}/>})}
+          
           <FlashSalesProducts />
           <FlashSalesProducts />
           <FlashSalesProducts />
