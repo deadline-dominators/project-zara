@@ -4,7 +4,7 @@ import image from "../../assests/dl.beatsnoop 1.png";
 import LazyLoad from "react-lazyload";
 import { useNavigate } from "react-router-dom";
 import "./Singin.css";
-import axios from "axios";
+import axios from "axios"; 
 
 const Singin = () => {
   const navigate = useNavigate();
@@ -12,15 +12,20 @@ const Singin = () => {
   const [password, setPassword] = useState("");
 
   const handleSingin = async (obj) => {
+    if (!email || !password) {
+      // Display an error message or prevent the form submission
+      console.log("Email and password are required.");
+      return;
+    }
+
     try {
       const response = await axios.post(
         "http://localhost:3001/api/ecommerce/login",
         obj
       );
       localStorage.setItem("token", response.data.response.data);
-      console.log(response.data.response.data);
+      // console.log(response.data.response.data);
       if (response.status === 200) {
-        // Redirect to the home page or any other desired page
         navigate("/");
       }
       if (!email || !password) {

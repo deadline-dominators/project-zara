@@ -2,7 +2,10 @@ import "./WishList.css";
 import React from "react";
 import Product from "../HomePage/FlashSalesProducts.js";
 
-function WishList() {
+function WishList({data}) {
+
+  const filteredProducts = data.filter((product) => product.categoryId === 5);
+
   return (
     <div className="main_container">
       <div className="wishList">
@@ -12,11 +15,12 @@ function WishList() {
             <button>Move All To Bag</button>
           </div>
           <div className="productCards">
-            <Product />
-            <Product />
-            <Product />
-            <Product />
-            <Product />
+            {filteredProducts.map(product => {
+              return (
+                <Product product={product} />
+              )
+            })}
+
           </div>
         </div>
         <div className="JustForYou">
@@ -28,11 +32,11 @@ function WishList() {
             <button>See All</button>
           </div>
           <div className="suggestion">
-            <Product />
-            <Product />
-            <Product />
-            <Product />
-            <Product />
+          {filteredProducts.map(product => {
+              return (
+                <Product product={product} />
+              )
+            })}
           </div>
         </div>
       </div>

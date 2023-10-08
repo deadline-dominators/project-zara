@@ -4,7 +4,8 @@ import React from "react";
 import Ecran from "../../assests/ecran.png";
 import Stars from "../../assests/vector.png";
 
-function FlashSalesProducts(){        
+function FlashSalesProducts({product}){
+  
   return (
     <a className="cart-with-flat-discount1">
     <div className="discount-percent-parent">
@@ -20,14 +21,14 @@ function FlashSalesProducts(){
         <img
           className="ak-900-01-500x500-1-icon"
           alt=""
-          src={Ecran}
+          src={product.firstImage}
         />
       </div>
     </div>
     <div className="havit-hv-g92-gamepad-parent">
-      <div className="shop-now">ffff</div>
+      <div className="shop-now">{product.name}</div>
       <div className="parent1">
-        <div className="shop-now">$960</div>
+        <div className="shop-now">${product.price}</div>
         <div className="div6">$1160</div>
       </div>
       <div className="five-star-parent">

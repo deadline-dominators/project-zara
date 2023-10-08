@@ -4,7 +4,7 @@ module.exports = {
   getAll: async (req, res) => {
     try {
       const response = await Category.findAll();
-      res.satatus(200).send(response);
+      res.json(response)
     } catch (error) {
       throw error;
     }
@@ -12,7 +12,7 @@ module.exports = {
   addCategory: async (req, res) => {
     try {
       const response = await Category.create(req.body);
-      res.satatus(201).json(response);
+      res.status(201).json(response);
     } catch (error) {
       throw error;
     }
