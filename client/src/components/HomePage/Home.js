@@ -93,8 +93,6 @@ export default function Home({data}) {
           <Link to="/productdetails" >
             <FlashSalesProducts />
           </Link>
-          {data.map((e)=>{ return <FlashSalesProducts e={e}/>})}
-          
           <FlashSalesProducts />
           <FlashSalesProducts />
           <FlashSalesProducts />
