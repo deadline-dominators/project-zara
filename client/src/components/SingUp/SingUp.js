@@ -1,11 +1,49 @@
+import "./SingUp.css";
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import { Link } from "react-router-dom";
 import LazyLoad from "react-lazyload";
 import image from "../../assests/dl.beatsnoop 1.png";
-import "./SingUp.css";
-const SingUp = ({ handleSignUp }) => {
-  const [name, setName] = useState("");
-  const [emailPhoneNumber, setEmailPhoneNumber] = useState("");
-  const [password, setPassword] = useState("");
+
+const SingUp = () => {
+  const navigate = useNavigate();
+  // const [name, setName] = useState("");
+  // const [emailPhoneNumber, setEmailPhoneNumber] = useState("");
+  // const [password, setPassword] = useState("");
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    password: "",
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await axios.post(
+        "http://localhost:3001/api/ecommerce/singup",
+        formData
+      );
+      console.log(response);
+
+      // Assuming your server returns a success status when signup is successful
+      if (response.status === 200) {
+        // Redirect to the home page or any other desired page
+        navigate("/");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <div className="singup-container">
       <div className="singup-img">
@@ -13,46 +51,30 @@ const SingUp = ({ handleSignUp }) => {
           <img className="singup_image" src={image} alt="" loading="lazy" />
         </LazyLoad>
       </div>
-      <div className="singup-form">
+      <form onSubmit={handleSubmit} className="singup-form">
         <div className="singup-text">
           <h1> Create an account </h1>
           <p>Enter your details below </p>
         </div>
         <input
-          placeholder="name"
+          type="text"
           name="name"
-          onChange={(e) => {
-            setName(e.target.value);
-          }}
+          value={formData.name}
+          onChange={handleChange}
         />
         <input
-          placeholder="Email or Phone Number"
+          type="email"
           name="email"
-          onChange={(e) => {
-            setEmailPhoneNumber(e.target.value);
-          }}
+          value={formData.email}
+          onChange={handleChange}
         />
         <input
           type="password"
-          placeholder="password"
           name="password"
-          onChange={(e) => {
-            setPassword(e.target.value);
-          }}
+          value={formData.password}
+          onChange={handleChange}
         />
-        <button
-          className="singup-button"
-          onClick={() => {
-            handleSignUp({
-              name: name,
-              email: emailPhoneNumber,
-              password: password,
-            });
-          }}
-        >
-          {" "}
-          Create Account{" "}
-        </button>
+        <button type="submit">Create Account</button>
         <button className="google-button">
           {" "}
           <svg
@@ -95,9 +117,9 @@ const SingUp = ({ handleSignUp }) => {
         </button>
         <div className="singup-footer-text">
           <p>Already have account? </p>
-          <a href="/singin">Login</a>
+          <Link to="/singin">Login</Link>
         </div>
-      </div>
+      </form>
     </div>
   );
 };

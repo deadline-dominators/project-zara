@@ -1,15 +1,38 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import image from "../../assests/dl.beatsnoop 1.png";
 import LazyLoad from "react-lazyload";
+import { useNavigate } from "react-router-dom";
 import "./Singin.css";
-const Singin = ({ handleSingin }) => {
+import axios from "axios";
+
+const Singin = () => {
+  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  const handleSingin = async (obj) => {
+    try {
+      const response = await axios.post(
+        "http://localhost:3001/api/ecommerce/login",
+        obj
+      );
+      localStorage.setItem("token", response.data.response.data);
+      console.log(response.data.response.data);
+      if (response.status === 200) {
+        // Redirect to the home page or any other desired page
+        navigate("/");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <div className="singin-container">
       <div className="singin-img">
         <LazyLoad height={200}>
-          <img src={image} alt=""  loading="lazy" />
+          <img src={image} alt="" loading="lazy" />
         </LazyLoad>
       </div>
       <div className="singin-form">
@@ -42,10 +65,12 @@ const Singin = ({ handleSingin }) => {
             {" "}
             Log in{" "}
           </button>
-          <a href="reset">Forget password? </a>
+          {/* Provide the correct path/route for password reset */}
+          <Link to="/password-reset">Forgot password? </Link>
         </div>
       </div>
     </div>
   );
 };
+
 export default Singin;

@@ -7,7 +7,7 @@ const fakeData = [
     size: "d",
     image:
       "https://th.bing.com/th/id/R.820be71b83cfc75afdb0586b8fe980b1?rik=A8LixHBcV1J5Lw&pid=ImgRaw&r=0",
-    color: [red, black],
+    color: ["red", "black"],
     rate: 3,
   },
   {
@@ -18,7 +18,7 @@ const fakeData = [
     size: "500*400",
     image:
       "https://i5.walmartimages.com/asr/6d919191-8fe5-4192-9055-8a0196f2dd5b.ee01a6cee365488d69f706de926cbc3e.jpeg",
-    color: [red, black],
+    color: ["red", "black"],
     rate: 5,
   },
   {
@@ -29,7 +29,7 @@ const fakeData = [
     size: "200*45",
     image:
       "https://www.toptenthebest.com/wp-content/uploads/2015/09/6.-Kid-Trax-Dodge-Viper-SRT-12V-Ride-on-Car.jpeg",
-    color: [red, white],
+    color: ["red", "white"],
     rate: 5,
   },
   {
@@ -40,8 +40,85 @@ const fakeData = [
     size: "s",
     image:
       "https://th.bing.com/th/id/OIP.iHDtFs_aojbrQEwciJNZkQHaHa?pid=ImgDet&rs=1",
-    color: [red],
+    color: ["red"],
     rate: 4,
+  },
+  {
+    name: "Breed Dry Dog Food",
+    description: "hello",
+    price: 100,
+    quantity: 2,
+    size: "d",
+    image:
+      "https://th.bing.com/th/id/R.820be71b83cfc75afdb0586b8fe980b1?rik=A8LixHBcV1J5Lw&pid=ImgRaw&r=0",
+    color: ["red", "black"],
+    rate: 3,
+  },
+  {
+    name: "Breed Dry Dog Food",
+    description: "hello",
+    price: 100,
+    quantity: 2,
+    size: "d",
+    image:
+      "https://th.bing.com/th/id/R.820be71b83cfc75afdb0586b8fe980b1?rik=A8LixHBcV1J5Lw&pid=ImgRaw&r=0",
+    color: ["red", "black"],
+    rate: 3,
+  },
+  {
+    name: "Breed Dry Dog Food",
+    description: "hello",
+    price: 100,
+    quantity: 2,
+    size: "d",
+    image:
+      "https://th.bing.com/th/id/R.820be71b83cfc75afdb0586b8fe980b1?rik=A8LixHBcV1J5Lw&pid=ImgRaw&r=0",
+    color: ["red", "black"],
+    rate: 3,
+  },
+  {
+    name: "Breed Dry Dog Food",
+    description: "hello",
+    price: 100,
+    quantity: 2,
+    size: "d",
+    image:
+      "https://th.bing.com/th/id/R.820be71b83cfc75afdb0586b8fe980b1?rik=A8LixHBcV1J5Lw&pid=ImgRaw&r=0",
+    color: ["red", "black"],
+    rate: 3,
+  },
+  {
+    name: "Breed Dry Dog Food",
+    description: "hello",
+    price: 100,
+    quantity: 2,
+    size: "d",
+    image:
+      "https://th.bing.com/th/id/R.820be71b83cfc75afdb0586b8fe980b1?rik=A8LixHBcV1J5Lw&pid=ImgRaw&r=0",
+    color: ["red", "black"],
+    rate: 3,
+  },
+  {
+    name: "Breed Dry Dog Food",
+    description: "hello",
+    price: 100,
+    quantity: 2,
+    size: "d",
+    image:
+      "https://th.bing.com/th/id/R.820be71b83cfc75afdb0586b8fe980b1?rik=A8LixHBcV1J5Lw&pid=ImgRaw&r=0",
+    color: ["red", "black"],
+    rate: 3,
+  },
+  {
+    name: "Breed Dry Dog Food",
+    description: "hello",
+    price: 100,
+    quantity: 2,
+    size: "d",
+    image:
+      "https://th.bing.com/th/id/R.820be71b83cfc75afdb0586b8fe980b1?rik=A8LixHBcV1J5Lw&pid=ImgRaw&r=0",
+    color: ["red", "black"],
+    rate: 3,
   },
 ];
 export default fakeData;
