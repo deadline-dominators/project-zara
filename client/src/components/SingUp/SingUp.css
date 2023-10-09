@@ -121,4 +121,6 @@ align-items: center;
 gap: 10px;
 background-color: #DB4444;
 color: white;
+border-radius: 4px;
+width: 100%;
 }

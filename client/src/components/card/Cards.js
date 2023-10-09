@@ -4,9 +4,12 @@ import ArrowUp from "../../assests/Drop-Down-Small.svg";
 import ArrowDown from "../../assests/Drop-Up-Small.svg";
 import CancelIcon from "../../assests/icon-cancel.svg";
 import Screen from "../../assests/ecran.png";
-import { Link } from "react-router-dom";
+import { Link , useLocation} from "react-router-dom";
 
 function Cards({data}) {
+  const location = useLocation()
+  const {tab} = location.state
+  console.log(location.state);
   return (
     <div className="CardContainer">
       <div className="AllContainer">
@@ -18,7 +21,7 @@ function Cards({data}) {
             <p>Subtotal</p>
           </div>
           <div className="Products">
-            <div className="OneProduct">
+            {/* <div className="OneProduct">
               <div className="Product">
                 <div className="ProductIMG">
                   <img id="Cancel" src={CancelIcon} alt="" />
@@ -35,8 +38,8 @@ function Cards({data}) {
                 </div>
               </div>
               <p className="subTotal">$650</p>
-            </div>
-            <div className="OneProduct">
+            </div> */}
+            {/* <div className="OneProduct">
               <div className="Product">
                 <div className="ProductIMG">
                   <img id="Cancel" src={CancelIcon} alt="" />
@@ -53,25 +56,33 @@ function Cards({data}) {
                 </div>
               </div>
               <p className="subTotal">$650</p>
-            </div>
-            <div className="OneProduct">
-              <div className="Product">
-                <div className="ProductIMG">
-                  <img id="Cancel" src={CancelIcon} alt="" />
-                  <img id="screen" src={Screen} alt="" />
+            </div> */}
+
+              {tab.map((e)=>{
+                return (
+                  <div className="OneProduct">
+                  <div className="Product">
+                    <div className="ProductIMG">
+                      <img id="Cancel" src={CancelIcon} alt="" />
+                      <img id="screen" src={Screen} alt="" />
+                    </div>
+                    <p>{e.name}</p>
+                  </div>
+                  <p className="price">${e.price}</p>
+                  <div className="Quantity">
+                    <p>01</p>
+                    <div className="arrow">
+                      <img src={ArrowDown} alt="" />
+                      <img src={ArrowUp} alt="" />
+                    </div>
+                  </div>
+                  <p className="subTotal">$650</p>
                 </div>
-                <p>LCD Monitor</p>
-              </div>
-              <p className="price">$650</p>
-              <div className="Quantity">
-                <p>01</p>
-                <div className="arrow">
-                  <img src={ArrowDown} alt="" />
-                  <img src={ArrowUp} alt="" />
-                </div>
-              </div>
-              <p className="subTotal">$650</p>
-            </div>
+                )
+              })}
+
+
+          
           </div>
           <div className="btnss">
             <Link to="/" className="btn">Return To Shop</Link>
