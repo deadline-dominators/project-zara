@@ -65,24 +65,29 @@ const SingUp = () => {
           <p>Enter your details below </p>
         </div>
         <input
+        placeholder="Enter your name"
           type="text"
           name="name"
           value={formData.name}
           onChange={handleChange}
         />
         <input
+                placeholder="Enter your email"
+
           type="email"
           name="email"
           value={formData.email}
           onChange={handleChange}
         />
         <input
+                placeholder="Enter your password"
+
           type="password"
           name="password"
           value={formData.password}
           onChange={handleChange}
         />
-        <button type="submit">Create Account</button>
+        <button type="submit" className="btn-singup" >Create Account</button>
         <button className="google-button">
           {" "}
           <svg

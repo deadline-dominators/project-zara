@@ -14,7 +14,8 @@ const Singin = () => {
   const handleSingin = async (obj) => {
     if (!email || !password) {
       // Display an error message or prevent the form submission
-      console.log("Email and password are required.");
+      alert("Email and password are required.");
+
       return;
     }
 

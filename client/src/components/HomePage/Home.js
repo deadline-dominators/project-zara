@@ -96,7 +96,6 @@ export default function Home({data}) {
           </div>
         </div>
         <div className="todayProducts">
-
           
           {filteredProducts.map((product) => {return(
             <Link to="/productdetails" >
