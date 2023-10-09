@@ -23,19 +23,19 @@ function App() {
   const navigate = useNavigate();
   const [data,setData]=useState([])
   console.log(data);
-useEffect(()=>{
-  fetchData()
-},[])
-
-const  fetchData = async()=>{
-  try {
-    const response = await axios.get("http://localhost:3001/api/product/getAll")
-    setData(response.data)
-  } catch (error) {
-    throw  error
+  
+  const  fetchData = async()=>{
+    try {
+      const response = await axios.get("http://localhost:3001/api/product/getAll")
+      setData(response.data)
+    } catch (error) {
+      throw  error
+    }
   }
-}
-
+  
+  useEffect(()=>{
+    fetchData()
+  },[])
 
   const handleSignUp = async (obj) => {
     try {
@@ -58,7 +58,7 @@ const  fetchData = async()=>{
   return (
     <div>
       <TopHeader />
-      <NavBar />
+      <NavBar/>
 
       <TransitionGroup className="transition-group">
         {/* CSSTransition for each route */}
@@ -83,10 +83,9 @@ const  fetchData = async()=>{
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/productdetails" element={<ProductsDetails />} />
-        <Route path="/wishlist" element={<WishList />} />
-        <Route path="/cart" element={<Cart />} />
+        <Route path="/wishlist" element={<WishList data={data} />} />
+        <Route path="/cart" element={<Cart data={data}  />} />
         <Route path="*" element={<Error />} />
-   
       </Routes>
         </CSSTransition>
       </TransitionGroup>

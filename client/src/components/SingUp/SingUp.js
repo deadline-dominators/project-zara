@@ -17,6 +17,8 @@ const SingUp = () => {
     password: "",
   });
 
+  const [error, setError] = useState("");
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({
@@ -28,6 +30,12 @@ const SingUp = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
+
+      if (!formData.name || !formData.email || !formData.password) {
+        setError("Please fill in all fields.");
+        return;
+      }
+
       const response = await axios.post(
         "http://localhost:3001/api/ecommerce/singup",
         formData
@@ -57,24 +65,29 @@ const SingUp = () => {
           <p>Enter your details below </p>
         </div>
         <input
+        placeholder="Enter your name"
           type="text"
           name="name"
           value={formData.name}
           onChange={handleChange}
         />
         <input
+                placeholder="Enter your email"
+
           type="email"
           name="email"
           value={formData.email}
           onChange={handleChange}
         />
         <input
+                placeholder="Enter your password"
+
           type="password"
           name="password"
           value={formData.password}
           onChange={handleChange}
         />
-        <button type="submit">Create Account</button>
+        <button type="submit" className="btn-singup" >Create Account</button>
         <button className="google-button">
           {" "}
           <svg

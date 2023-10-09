@@ -1,5 +1,5 @@
 import "./Home.css";
-import React from "react";
+import React, {useEffect, useState} from "react";
 import { Link } from "react-router-dom";
 import CategoryList from "./HomeLayout/CategorysList";
 import ImageSlider from "./HomeLayout/ImageSlider";
@@ -16,9 +16,15 @@ import SmartWatchSVG from '../../assests/Category-SmartWatch.svg'
 import CameraSVG from '../../assests/Category-Camera.svg'
 import HeadPhonesSVG from '../../assests/Category-Headphone.svg'
 import GamingSVG from '../../assests/Category-Gamepad.svg'
+import star from '../../assests/star.png'
  
 
 export default function Home({data}) {
+  // const [filteredData, setFilteredData] = useState([]);
+  // const [filteredBestSelling, setFilteredBestSelling] = useState([])
+  const filteredProducts = data.filter((product) => product.categoryId === 1);
+  const BestSelling = data.filter((bestSelling) => bestSelling.categoryId === 5);
+
   return (
     <div className="HomeContainer">
       <section className="landingPage">
@@ -90,14 +96,17 @@ export default function Home({data}) {
           </div>
         </div>
         <div className="todayProducts">
-          <Link to="/productdetails" >
-            <FlashSalesProducts />
-          </Link>
+          
+          {filteredProducts.map((product) => {return(
+            <Link to="/productdetails" >
+              <FlashSalesProducts product={product} />
+            </Link>)}
+             )}
+          {/* <FlashSalesProducts />
           <FlashSalesProducts />
           <FlashSalesProducts />
           <FlashSalesProducts />
-          <FlashSalesProducts />
-          <FlashSalesProducts />
+          <FlashSalesProducts /> */}
         </div>
         <div className="view-all-products-container">
           <div className="shop-now"><Link to='*'>View All Products</Link></div>
@@ -188,163 +197,49 @@ export default function Home({data}) {
           </div>
         </div>
         <div className="category-phone-parent">
-          <div className="cart-with-flat-discount">
-            <div className="discount-percent-parent">
-              <div className="fill-heart-parent">
-                <img
-                  className="fill-heart-icon"
-                  alt=""
-                  src="/fill-heart6.svg"
-                />
-                <img className="fill-heart-icon" alt="" src="/fill-eye6.svg" />
-              </div>
-              <div className="g92-2-500x500-1-wrapper">
-                <img
-                  className="zah9d-5626-002-100-0000-light-icon"
-                  alt=""
-                  src="/672462-zah9d-5626-002-100-0000-lightthenorthfacexguccicoat-1@2x.png"
-                />
-              </div>
-            </div>
-            <div className="the-north-coat-parent">
-              <div className="shop-now">The north coat</div>
-              <div className="parent1">
-                <div className="shop-now">$260</div>
-                <div className="div6">$360</div>
-              </div>
-              <div className="five-star-parent">
-                <div className="five-star">
-                  <img className="vector-icon" alt="" src="/vector31.svg" />
-                  <img className="vector-icon" alt="" src="/vector32.svg" />
-                  <img className="vector-icon" alt="" src="/vector33.svg" />
-                  <img className="vector-icon" alt="" src="/vector34.svg" />
-                  <img className="vector-icon" alt="" src="/vector35.svg" />
-                </div>
-                <div className="div7">(65)</div>
-              </div>
-            </div>
-          </div>
-          <div className="cart-with-flat-discount">
-            <div className="discount-percent-parent">
-              <div className="fill-heart-parent">
-                <img
-                  className="fill-heart-icon"
-                  alt=""
-                  src="/fill-heart7.svg"
-                />
-                <img className="fill-heart-icon" alt="" src="/fill-eye7.svg" />
-              </div>
-              <div className="g92-2-500x500-1-wrapper">
-                <img
-                  className="c2st-8746-001-082-0000-light-g-icon"
-                  alt=""
-                  src="/547953-9c2st-8746-001-082-0000-lightguccisavoymediumdufflebag-1@2x.png"
-                />
-              </div>
-            </div>
-            <div className="the-north-coat-parent">
-              <div className="shop-now">Gucci duffle bag</div>
-              <div className="parent1">
-                <div className="shop-now">$960</div>
-                <div className="div6">$1160</div>
-              </div>
-              <div className="five-star-parent">
-                <div className="five-star">
-                  <img className="vector-icon" alt="" src="/vector36.svg" />
-                  <img className="vector-icon" alt="" src="/vector37.svg" />
-                  <img className="vector-icon" alt="" src="/vector38.svg" />
-                  <img className="vector-icon" alt="" src="/vector39.svg" />
+          {BestSelling.map(e => {
+            return (
+              <div className="cart-with-flat-discount">
+              <div className="discount-percent-parent">
+                <div className="fill-heart-parent">
                   <img
-                    className="star-half-filled-icon"
+                    className="fill-heart-icon"
                     alt=""
-                    src="/starhalffilled3.svg"
+                    src="/fill-heart6.svg"
+                  />
+                  <img className="fill-heart-icon" alt="" src="/fill-eye6.svg" />
+                </div>
+                <div className="g92-2-500x500-1-wrapper">
+                  <img
+                    className="zah9d-5626-002-100-0000-light-icon"
+                    alt=""
+                    src={e.firstImage}
                   />
                 </div>
-                <div className="div7">(65)</div>
               </div>
-            </div>
-          </div>
-          <div className="cart-with-flat-discount">
-            <div className="discount-percent-parent">
-              <div className="fill-heart-parent">
-                <img
-                  className="fill-heart-icon"
-                  alt=""
-                  src="/fill-heart8.svg"
-                />
-                <img className="fill-heart-icon" alt="" src="/fill-eye8.svg" />
-              </div>
-              <div className="gammaxx-l240-argb-1-500x500-1-wrapper">
-                <img
-                  className="gammaxx-l240-argb-1-500x500-1-icon"
-                  alt=""
-                  src="/gammaxxl240argb1500x500-1@2x.png"
-                />
-              </div>
-            </div>
-            <div className="the-north-coat-parent">
-              <div className="shop-now">RGB liquid CPU Cooler</div>
-              <div className="parent1">
-                <div className="shop-now">$160</div>
-                <div className="div6">$170</div>
-              </div>
-              <div className="five-star-parent">
-                <div className="five-star">
-                  <img className="vector-icon" alt="" src="/vector40.svg" />
-                  <img className="vector-icon" alt="" src="/vector41.svg" />
-                  <img className="vector-icon" alt="" src="/vector42.svg" />
-                  <img className="vector-icon" alt="" src="/vector43.svg" />
-                  <img
-                    className="star-half-filled-icon"
-                    alt=""
-                    src="/starhalffilled4.svg"
-                  />
+              <div className="the-north-coat-parent">
+                <div className="shop-now">{e.name}</div>
+                <div className="parent1">
+                  <div className="shop-now">${e.price}</div>
+                  <div className="div6">$360</div>
                 </div>
-                <div className="div7">(65)</div>
-              </div>
-            </div>
-          </div>
-          <div className="cart-with-flat-discount">
-            <div className="discount-percent-parent">
-              <div className="fill-heart-parent">
-                <img
-                  className="fill-heart-icon"
-                  alt=""
-                  src="/fill-heart9.svg"
-                />
-                <img className="fill-heart-icon" alt="" src="/fill-eye9.svg" />
-              </div>
-              <div className="gammaxx-l240-argb-1-500x500-1-wrapper">
-                <img
-                  className="sam-moghadam-khamseh-l-7mqshl-icon"
-                  alt=""
-                  src="/sammoghadamkhamsehl-7mqshl-auunsplash-1@2x.png"
-                />
-              </div>
-            </div>
-            <div className="the-north-coat-parent">
-              <div className="shop-now">Small BookSelf</div>
-              <div className="wrapper">
-                <div className="shop-now">$360</div>
-              </div>
-              <div className="five-star-parent">
-                <div className="five-star">
-                  <img className="vector-icon" alt="" src="/vector44.svg" />
-                  <img className="vector-icon" alt="" src="/vector45.svg" />
-                  <img className="vector-icon" alt="" src="/vector46.svg" />
-                  <img className="vector-icon" alt="" src="/vector47.svg" />
-                  <img className="vector-icon" alt="" src="/vector48.svg" />
+                <div className="five-star-parent">
+                  <div className="five-star">
+                    <img className="vector-icon" alt="" src="/vector31.svg" />
+                    {BestSelling.map(e => {return <img className="vector-icon" alt="" src={star} />})}
+                  </div>
+                  <div className="div7">(65)</div>
                 </div>
-                <div className="div7">(65)</div>
               </div>
             </div>
-          </div>
+            )
+          })}
         </div>
       </div>
       <img src={SpeakerBanner} alt="" />
       </section>
       <section className="OurProduct">
-        <ProductsShow />
+        <ProductsShow data={data}/>
       </section>
       <section className="new_arrival">
         <NewArrival />
