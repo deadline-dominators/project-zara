@@ -7,7 +7,6 @@ import Screen from "../../assests/ecran.png";
 import { Link } from "react-router-dom";
 
 function Cards({data}) {
-  
   return (
     <div className="CardContainer">
       <div className="AllContainer">

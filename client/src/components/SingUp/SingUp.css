@@ -112,3 +112,15 @@
   color: black;
   border-bottom: 1px solid black;
 }
+.btn-singup{
+  border: none;
+  display: flex;
+padding: 16px 122px;
+justify-content: center;
+align-items: center;
+gap: 10px;
+background-color: #DB4444;
+color: white;
+border-radius: 4px;
+width: 100%;
+}
