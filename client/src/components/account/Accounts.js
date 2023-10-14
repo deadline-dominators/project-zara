@@ -360,7 +360,7 @@ const  updateAccout=()=>{
             position: 'relative',
           }}
         >
-          <input  onChnage={(e)=>{
+          <input  onChange={(e)=>{
                 setConfirmPassword(e.target.value)
             }}placeholder=" Confirm new password"
             style={{
@@ -431,9 +431,10 @@ const  updateAccout=()=>{
               lineHeight: '24px',
               wordWrap: 'break-word',
             }}
-            onClick={()=>{
-                updateAccout()
-            }} >
+            // onClick={()=>{
+            //     updateAccout()
+            // }} 
+            >
             Save Changes
           </div>
         </div>

@@ -7,9 +7,7 @@ import { Link } from "react-router-dom";
 
 
 function FlashSalesProducts({product}){
-  const [tab,setTab]=useState([])
-  tab.push(product)
-  setTab(tab)
+  
   return (
     <a className="cart-with-flat-discount1">
     <div className="discount-percent-parent">
@@ -17,7 +15,7 @@ function FlashSalesProducts({product}){
         <div className="new">-35%</div>
       </div>
       <div className="rectangle-div" />
-      <div className="add-to-cart" onClick={()=>{ <Link to ="/cart"  state={{tab:tab}} ></Link>}}>Add To Cart</div>
+      <div className="add-to-cart" onClick={()=>{ <Link to ="/cart" ></Link>}}>Add To Cart</div>
       <div className="fill-heart-parent">
         <i class="bi bi-heart fill-heart-icon"></i>
       </div>
